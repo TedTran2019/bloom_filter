@@ -26,7 +26,7 @@ A simple bloom filter implementation to teach myself.
 
 3. What's the ideal amount of times to hash the input?
 
-    a. $-log_{2}ε$
+    a. $-log_{2}ε$ or $\frac{m}{n}ln2$
 
     b. Instead of hashing k times, can hash 2 times with the [Kirsch-Mitzenmacher optimization](https://www.eecs.harvard.edu/~michaelm/postscripts/tr-02-05.pdf).
 ## Extra
