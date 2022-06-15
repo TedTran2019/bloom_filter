@@ -29,13 +29,13 @@ Kirsch-Mitzenmacher optimization is probably much better. It's a space-efficient
 
     b. For best uniformity, a crytographic hash like SHA-256.
 
-3. What's the ideal amount of times to hash the input?
+3. How many hashing functions to use?
 
     a. $-log_{2}ε$
 
     b. $\frac{m}{n}ln2$
 
-    c. Instead of hashing k times, can hash 2 times with the [Kirsch-Mitzenmacher optimization](https://www.eecs.harvard.edu/~michaelm/postscripts/tr-02-05.pdf).
+    c. Instead of hashing with k functions, can hash with two functions aka the [Kirsch-Mitzenmacher optimization](https://www.eecs.harvard.edu/~michaelm/postscripts/tr-02-05.pdf).
 ## Extra
 1. How to calculate ε
 
