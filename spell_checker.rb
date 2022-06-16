@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'bloom_filter'
 
 # wordlist.txt from https://github.com/dwyl/english-words/blob/master/words_alpha.txt
@@ -13,14 +15,12 @@ class SpellChecker
   end
 
   def run
-    while true
+    loop do
       puts 'Enter a word to check against the spell checker or 1337 to exit the program'
       input = gets.chomp
-      if input == '1337'
-        break
-      else
-        puts check(input)
-      end
+      break if input == '1337'
+
+      puts check(input)
     end
   end
 
