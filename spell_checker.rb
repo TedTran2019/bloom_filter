@@ -4,9 +4,11 @@ require_relative 'bloom_filter'
 
 # wordlist.txt from https://github.com/dwyl/english-words/blob/master/words_alpha.txt
 # contains 370105 words
+# spellwords.txt from https://www.openbookproject.net/py4fun/spellCheck/spellCheck.html
+# contains 53,751 words
 class SpellChecker
-  def initialize(filename)
-    @bloom = BloomFilter.new(370_105, 0.001)
+  def initialize(filename, word_count)
+    @bloom = BloomFilter.new(word_count, 0.001)
     fill_bloom(filename)
   end
 
@@ -32,9 +34,11 @@ class SpellChecker
 end
 
 filename = 'wordlist.txt'
+word_count = 370_105
 filename2 = 'spellwords.txt'
+word_count2 = 53_751
 
 if __FILE__ == $PROGRAM_NAME
-  sc = SpellChecker.new(filename2)
+  sc = SpellChecker.new(filename2, word_count2)
   sc.run
 end
