@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'bloom_filter'
 
 # wordlist.txt from https://github.com/dwyl/english-words/blob/master/words_alpha.txt
@@ -38,7 +36,25 @@ word_count = 370_105
 filename2 = 'spellwords.txt'
 word_count2 = 53_751
 
-if __FILE__ == $PROGRAM_NAME
-  sc = SpellChecker.new(filename2, word_count2)
-  sc.run
+# if __FILE__ == $PROGRAM_NAME
+#   sc = SpellChecker.new(filename2, word_count2)
+#   sc.run
+# end
+
+def generate_rand_five_char
+  str = ''
+  5.times do 
+    str << (97 + rand(26)).chr
+  end
+  str
 end
+
+dict = {}
+File.readlines(filename2).each { |line| dict[line.chomp] = true }
+sc = SpellChecker.new(filename2, word_count2)
+false_pos = 0
+  1000.times do 
+    word = generate_rand_five_char
+    false_pos += 1 if !!dict[word] != sc.check(word)
+  end
+puts false_pos
