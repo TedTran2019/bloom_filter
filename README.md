@@ -4,7 +4,7 @@ A simple bloom filter implementation.
 ## Purpose
 Given expected size and a desired false positive probability, calculate the size
 of the bit array. Then calculate the amount of times to hash after. Use the 
-Kirsch-Mitzenmacher optimization to reduce expensive hashing operations. It's a space-efficient probabilistic data structure that's used to test whether an element is a member of a set.
+Kirsch-Mitzenmacher optimization to reduce the amount of expensive hashing operations to two. It's a space-efficient probabilistic data structure that's used to test whether an element is a member of a set.
 
 ## tl;dr bloom filter
 1. Array of (x) length
