@@ -1,5 +1,5 @@
 # bloom_filter
-A simple bloom filter implementation to teach myself.
+A simple bloom filter implementation.
 
 ## Purpose
 Given expected size and a desired false positive probability, calculate the size
