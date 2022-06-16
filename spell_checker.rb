@@ -32,9 +32,9 @@ class SpellChecker
 end
 
 filename = 'wordlist.txt'
+filename2 = 'spellwords.txt'
 
 if __FILE__ == $PROGRAM_NAME
-  sc = SpellChecker.new(filename)
-  puts sc.check('1337')
+  sc = SpellChecker.new(filename2)
   sc.run
 end
