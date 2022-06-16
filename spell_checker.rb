@@ -43,8 +43,8 @@ word_count2 = 53_751
 
 def generate_rand_five_char
   str = ''
-  5.times do 
-    str << (97 + rand(26)).chr
+  5.times do
+    str << rand(97..122).chr
   end
   str
 end
@@ -53,8 +53,8 @@ dict = {}
 File.readlines(filename2).each { |line| dict[line.chomp] = true }
 sc = SpellChecker.new(filename2, word_count2)
 false_pos = 0
-  1000.times do 
-    word = generate_rand_five_char
-    false_pos += 1 if !!dict[word] != sc.check(word)
-  end
+1000.times do
+  word = generate_rand_five_char
+  false_pos += 1 if !dict[word].nil? != sc.check(word)
+end
 puts false_pos
